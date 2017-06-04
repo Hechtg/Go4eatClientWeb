@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>Go4eat Pilot - By Guy Hecht</title>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="Go4eatPilot.css">
+    <!-- Latest compiled JavaScript -->
+    <script src="Go4eatPilot.js"></script>
+  </head>
+  <body>
+    <form >
+      <div name = "dishDiv">
+        <input type="radio" name="dish" value="Salad" checked>Salad<br>
+        <!-- <input type="radio" name="dish" value="Sandwich">Sandwich<br> -->
+      </div>
+      <div name = "dishProp" style="display: none;">
+        <input type="checkbox" name="prop" value="Tomatoes">Tomatoes<br>
+        <input type="checkbox" name="prop" value="Cucumbares">Cucumbares<br>
+        <input type="checkbox" name="prop" value="Red Sweet Pepper">Red Sweet Pepper<br>
+        <input type="checkbox" name="prop" value="Corn">Corn<br>
+        <input type="checkbox" name="prop" value="Tuna-Fish">Tuna-Fish<br>
+      </div>
+      <div name = "addNotes" style="display: none;">
+          <textarea  id="notes" rows="4" cols="50" placeholder="Here you can write notes about your order"></textarea><br>
+      </div>
+      <div id="orderSent" name="orderSent" style="display: none;">Order was sent successfuly!</div>
+      <div id="orderSumUp" name="finalAprooval" style="display: none;">Your Order Details:</div>
+    </form>
+
+    <button class="button" onclick="chosenDish()" id="submitButton" value="dishSelection">Choose</button>
+    <button class="button" onclick="regretChoice()" id="regretButton" value="dishSelection" style="display: none;">Back</button>
+    <button class="button" onclick="window.close()" id="closeWindowButton" style="display: none;">Close</button>
+
+    <!--Firebase Scripts-->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBmxr2j77P571cuMDbIJLytl5ts7jL7J4o",
+        authDomain: "go4eatprovider-5dac4.firebaseapp.com",
+        databaseURL: "https://go4eatweb.firebaseio.com/",
+        projectId: "go4eatprovider-5dac4",
+        storageBucket: "go4eatprovider-5dac4.appspot.com",
+        messagingSenderId: "867135430663"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!--End of Firebase Scripts-->
+  </body>
+</html>

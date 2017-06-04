@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Go4eat Pilot - By Guy Hecht</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Latest compiled firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="Go4eatPilot.css">
+    <!-- Latest compiled JavaScript -->
+    <script src="Go4eatPilot.js"></script>
+  </head>
+  <body>
+    <form>
+      <div name = "restDiv">
+        <input type="radio" name="rest" value="Karnaf" checked>Karnaf<br>
+        <input type="radio" name="rest" value="Diner">Diner<br>
+      </div>
+      <div name = "dishDiv" style="display: none;">
+        <input type="radio" name="dish" value="Salad" checked>Salad<br>
+        <!-- <input type="radio" name="dish" value="Sandwich">Sandwich<br> -->
+      </div>
+      <div name = "dishProp" style="display: none;">
+        <input type="checkbox" name="prop" value="Tomatoes">Tomatoes<br>
+        <input type="checkbox" name="prop" value="Cucumbares">Cucumbares<br>
+        <input type="checkbox" name="prop" value="Red Sweet Pepper">Red Sweet Pepper<br>
+        <input type="checkbox" name="prop" value="Corn">Corn<br>
+        <input type="checkbox" name="prop" value="Tuna-Fish">Tuna-Fish<br>
+      </div>
+      <div name = "addNotes" style="display: none;">
+          <textarea  id="notes" rows="4" cols="50" placeholder="Here you can write notes about your order"></textarea><br>
+      </div>
+      <div id="orderSent" name="orderSent" style="display: none;">Order was sent successfuly!</div>
+      <div id="orderSumUp" name="finalAprooval" style="display: none;">Your Order Details:</div>
+    </form>
+
+    <button class="button" onclick="quickOrder()" id="quickOrderButton">Quick Order</button>
+    <button class="button" onclick="chosenDish()" id="submitButton" value="restSelection">Choose</button>
+    <button class="button" onclick="regretChoice()" id="regretButton" value="restSelection" style="display: none;">Back</button>
+    <button class="button" onclick="window.close()" id="closeWindowButton" style="display: none;">Close</button>
+
+  </body>
+</html>
